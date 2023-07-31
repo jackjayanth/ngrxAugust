@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="justify-content-center">
+    <button (click)="increment()" class="btn btn-success">Increment</button>
+    <button (click)="decrement()" class="btn btn-info">Decrement</button>
+    <button (click)="reset()" class="btn btn-danger">Reset</button>
+    <br />
+    <br />
+    <br />
+    <div>
+      <input type="text" [(ngModel)]="customNumber" />
+      <button class="btn btn-primary" (click)="customAdd()">Add number</button>
+    </div>
+    <br /><br />
+    <hr />
+    <h1>My name is {{ name }}</h1>
+
+    <button (click)="changeName()" class="btn btn-secondary">
+      Change Name
+    </button>
+  </div>
+</div>
