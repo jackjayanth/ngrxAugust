@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, isDevMode } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -9,6 +9,7 @@ import { CounterOutputComponent } from './components/counter-output/counter-outp
 import { CounterButtonsComponent } from './components/counter-buttons/counter-buttons.component';
 import { counterReducer } from './state/counter.reducer';
 import { FormsModule } from '@angular/forms';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     StoreModule.forRoot({ counter: counterReducer }),
     FormsModule,
+    StoreDevtoolsModule.instrument({ maxAge: 125, logOnly: !isDevMode() }),
   ],
   providers: [],
   bootstrap: [AppComponent],
